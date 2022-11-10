@@ -9,7 +9,11 @@ public class Target : MonoBehaviour
 
     private void OnCollisionEnter2D( Collision2D collision )
     {
-        throw new System.NotImplementedException();
+        Debug.Log("Current speed: " + collision.relativeVelocity.magnitude);
+        if(collision.relativeVelocity.magnitude >= MinimumBreakSpeed)
+        {
+            DestroyTarget();
+        }
     }
 
     public void DestroyTarget()
