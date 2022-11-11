@@ -11,9 +11,22 @@ public class MovingTarget : MonoBehaviour
 
     public float num = 0;
 
+    private Rigidbody2D body;
+    private float startingY;
+
+    private void Start()
+    {
+        body = GetComponent<Rigidbody2D>();
+        startingY = body.position.y;
+    }
+
     private void FixedUpdate()
     {
-        num = Mathf.Lerp(-HalfPathDistance, HalfPathDistance, Mathf.PingPong(Time.time, MovementSpeed));
+        num = startingY + Mathf.Sin(Time.time * MovementSpeed) * HalfPathDistance;
+
+
+        body.MovePosition(new Vector2(body.position.x, num));
+
 
     }
 }

@@ -8,7 +8,8 @@ public class AirSpecialSplit : MonoBehaviour, IAirSpecial
     {
         var rigidBodyOriginal = GetComponent<Rigidbody2D>();
 
-        Vector2 direction = gameObject.transform.position * Vector2.left;
+
+        Vector2 direction = gameObject.transform.position * Vector2.up;
 
         var birbCopy1 = Birb.MakeBirbCopy(this.gameObject);
         var rigidBody1 = birbCopy1.GetComponent<Rigidbody2D>();

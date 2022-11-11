@@ -20,7 +20,6 @@ public class AirSpecialExplode : MonoBehaviour, IAirSpecial
             if (hit.transform.gameObject.layer == LayerMask.NameToLayer("Target"))
             {
                 hit.transform.GetComponent<Target>().DestroyTarget();
-                Debug.Log(hit.transform.gameObject.name);
             }
         }
         
