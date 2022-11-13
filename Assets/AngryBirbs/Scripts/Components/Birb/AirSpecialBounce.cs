@@ -8,8 +8,7 @@ public class AirSpecialBounce : MonoBehaviour, IAirSpecial
     public void ExecuteAirSpecial()
     {
         var rigidbody = GetComponent<Rigidbody2D>();
-        rigidbody.AddForce(Vector2.up * 10, ForceMode2D.Impulse);
-        rigidbody.velocity = rigidbody.velocity * SlowDownFactor;
+        rigidbody.AddForce(Vector2.up * rigidbody.velocity * SlowDownFactor, ForceMode2D.Impulse);
 
     }
 }

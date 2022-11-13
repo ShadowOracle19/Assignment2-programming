@@ -11,7 +11,7 @@ public class AirSpecialSplit : MonoBehaviour, IAirSpecial
 
         Vector2 direction = gameObject.transform.position * Vector2.up;
 
-        var birbCopy1 = Birb.MakeBirbCopy(this.gameObject);
+        var birbCopy1 = Birb.MakeBirbCopy(gameObject);
         var rigidBody1 = birbCopy1.GetComponent<Rigidbody2D>();
         rigidBody1.simulated = true;
         rigidBody1.AddForce(rigidBodyOriginal.velocity , ForceMode2D.Impulse);
@@ -20,7 +20,7 @@ public class AirSpecialSplit : MonoBehaviour, IAirSpecial
 
 
 
-        var birbCopy2 = Birb.MakeBirbCopy(this.gameObject);
+        var birbCopy2 = Birb.MakeBirbCopy(gameObject);
         var rigidBody2 = birbCopy2.GetComponent<Rigidbody2D>();
         rigidBody2.simulated = true;
         rigidBody2.AddForce(rigidBodyOriginal.velocity * direction, ForceMode2D.Impulse);
